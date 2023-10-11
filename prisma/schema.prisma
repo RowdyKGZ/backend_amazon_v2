@@ -22,5 +22,15 @@ model User {
   avatarPath String @default("/uploads/default-avatar.png") @map("avatar_path")
 
   phone String? @default("")
-  
+}
+
+model Product {
+  id Int @id @default(autoincrement())
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  name String @unique
+  avatarPath String @default("/uploads/default-avatar.png") @map("avatar_path")
+
+  phone String? @default("")
 }
